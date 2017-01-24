@@ -7,11 +7,9 @@ use strict;
 # Relative directory
 my $dir = ".";
 
-{
-    opendir $dirh,$dir or die "can't open $dir: $!";
-    my @dir = readdir($dirh);
-    close $dirh;
-}
+opendir DIR,$dir or die "can't open $dir: $!";
+my @dir = readdir(DIR);
+close DIR;
 
 foreach my $item (@dir)
 {
